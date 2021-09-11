@@ -1,0 +1,85 @@
+<div class="container">
+    <div><button class="btn btn-primary float-right addButton" (click)="open(content)">+</button></div><br><br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Roll Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Contact number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let val of studVal">
+                <td>{{val.id}}</td>
+                <td>{{val.firstName}}</td>
+                <td>{{val.lastName}}</td>
+                <td>{{val.contact}}</td>
+                <td>
+                    <button class="btn btn-warning" (click)="edit(editcontent,val)">edit</button>&nbsp;
+                    <button class="btn btn-danger"
+                    (click)="deleteStudent(val.id)">delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add Student Details</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="addStudentForm">
+            <div>
+                <label for="firstname" class="form-label">Firstname</label>
+                <input type="text" id="firstname" formControlName="firstName" class="form-control">
+            </div><br>
+            <div>
+                <label for="lastname" class="form-label">Lastname</label>
+                <input type="text" id="lastname" formControlName="lastName" class="form-control">
+            </div><br>
+            <div>
+                <label for="contact" class="form-label">Contact</label>
+                <input type="number" id="contact" formControlName="contact" class="form-control">
+            </div><br>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="submitDetails()">Save</button>
+    </div>
+</ng-template>
+
+<ng-template #editcontent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Update Student Details</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="addStudentForm">
+            <div>
+                <label for="firstname" class="form-label">Firstname</label>
+                <input type="text" id="firstname" formControlName="firstName" class="form-control">
+            </div><br>
+            <div>
+                <label for="lastname" class="form-label">Lastname</label>
+                <input type="text" id="lastname" formControlName="lastName" class="form-control">
+            </div><br>
+            <div>
+                <label for="contact" class="form-label">Contact</label>
+                <input type="number" id="contact" formControlName="contact" class="form-control">
+            </div><br>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="updateDetails()">Update</button>
+    </div>
+</ng-template>

@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Cena",
+      "contact": 1234567890
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

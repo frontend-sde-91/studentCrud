@@ -1,0 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~ngx-toastr/toastr.css';
+
+.addButton{
+    background-image: linear-gradient(rgb(106, 106, 252),rgb(86, 86, 247),rgb(39, 39, 245),blue) !important;
+    position: absolute;
+    right: 0.5%;
+    font-size: larger;
+}
