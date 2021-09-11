@@ -95,6 +95,7 @@ export class CrudComponent implements OnInit {
     this._api.getStudent().subscribe(
       (data) => {
         this.studVal = data;
+        
       }
     )
   }
